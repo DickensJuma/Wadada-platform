@@ -172,14 +172,15 @@ router.post(
       // If any errors, send 400 with errors object
       return res.status(400).json(errors);
     }
-
+console.log(req.body)
     Post.findById(req.params.id)
       .then(post => {
         const newComment = {
           text: req.body.text,
           name: req.body.name,
           avatar: req.body.avatar,
-          user: req.user.id
+          user: req.user.id,
+          anonymous: req.body.checked
         };
 
         // Add to comments array

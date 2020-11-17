@@ -1,7 +1,7 @@
-# realDevsMeet
+# Wadada Platforms
 
 Full Stack web app.
-Social networking site for developers.
+Social networking site for wadada
 
 ## Technologies used
 
@@ -17,4 +17,3 @@ Social networking site for developers.
 
 ### Link to site
 
-(https://real-devs-meet.herokuapp.com/)

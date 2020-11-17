@@ -9,7 +9,8 @@ class CommentForm extends Component {
     super(props);
     this.state = {
       text: "",
-      errors: {}
+      errors: {},
+      checked: false
     };
 
     this.onChange = this.onChange.bind(this);
@@ -25,13 +26,14 @@ class CommentForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const { user } = this.props.auth;
+   const { user } = this.props.auth;
     const { postId } = this.props;
 
     const newComment = {
       text: this.state.text,
-      name: user.name,
-      avatar: user.avatar
+       name: user.name,
+       avatar: user.avatar,
+       checked: this.state.checked
     };
 
     this.props.addComment(postId, newComment);
@@ -41,10 +43,12 @@ class CommentForm extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-
+  // onAnonymous(e) {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // }
   render() {
     const { errors } = this.state;
-
+ 
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
@@ -65,8 +69,28 @@ class CommentForm extends Component {
               <button type="submit" className="btn btn-dark">
                 Submit
               </button>
+              <label htmlFor="anonymous" className='ml-5'>
+                <input type='checkbox' className='mx-2' name='anonymous' onChange={(e)=>this.setState({checked: e.target.checked})}/>
+                Anonymous comment
+              </label>
             </form>
           </div>
+          {/* <div className="card-body">
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <TextAreaFieldGroup
+                  placeholder="Reply to post"
+                  name="text"
+                  value={this.state.text}
+                  // onChange={this.onAnonymous}
+                  error={errors.text}
+                />
+              </div>
+              <button type="submit" className="btn btn-dark">
+                Anonymous comment
+              </button>
+            </form>
+          </div> */}
         </div>
       </div>
     );

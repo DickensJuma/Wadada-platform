@@ -5,6 +5,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clearCurrentProfile } from "./actions/profileActions";
 
+
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -50,13 +51,19 @@ if (localStorage.jwtToken) {
   }
 }
 
+
 class App extends Component {
+
+ 
   render() {
     return (
+      
+    
       <Provider store={store}>
         <Router>
           <div className="App">
             <Navbar />
+            
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
@@ -107,6 +114,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
+     
     );
   }
 }

@@ -32,6 +32,10 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "users"
       },
+      anonymous: {
+        type: Boolean,
+        default: false
+      },
       text: {
         type: String,
         required: true
