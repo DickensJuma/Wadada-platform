@@ -32,8 +32,8 @@ class PostItem extends Component {
 
     return (
    
-<div className="col-md-8 col-xl-6 middle-wrapper">
-  <div className="row">
+<div >
+  <div >
     <div className="col-md-12 grid-margin">
       <div className="card rounded">
         <div className="card-header">
@@ -83,10 +83,10 @@ class PostItem extends Component {
             </div>
           </div>
         </div>
-        <div className="card-body">
+        {/* <div className="card-body">
           <p className="mb-3 tx-14">{post.text}</p>
           <img className="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt />
-        </div>
+        </div> */}
         <div className="card-footer">
           <div className="d-flex post-actions">
             <a href="javascript:;" className="d-flex align-items-center text-muted mr-4">
